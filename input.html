@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+        <title>Collapse Navbar with Javascript</title>
+        <link rel="shortcut icon" href="/assets/favicon.ico">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <link rel="stylesheet" href="main.css" media="screen">
+
+        <div class="page-container">
+            <nav class="nav">
+                <div class="nav__border"></div>
+                <a href="#" class="nav_link">
+                    <div class="nav__icon--container">
+                        <i class ="material-icons">dashboard</i>
+                    </div>
+                    <span class="nav__label">Dashboard </span>
+                </a>
+            
+
+                <a href="#" class="nav_link">
+                    <div class="nav__icon--container">
+                        <i class ="material-icons">alarms</i>
+                        </div>
+                    
+                    <span class="nav__label">Alerts</span>
+             </a>
+
+                    <a href="#" class="nav_link">
+                        <div class="nav__icon--container">
+                            <i class ="material-icons">extensions</i>
+                        </div>
+                        <span class="nav__label">Plugins</span>
+                        </a>
+                
+                        <a href="#" class="nav_link">
+                            <div class="nav__icon--container">
+                                <i class ="material-icons">power_settings_new</i>
+                            </div>
+                            <span class="nav__label">Log Out</span>
+                            </a>
+                    </div>
+                </nav>
+          
+            <main class="main">
+
+            </main>
+        </div>
+        <script>
+            //navigation
+            {
+                const collapseClass = "nav--collapsed";
+                const lskey = "navCollapsed";
+
+                const nav = document.querySelector(".nav");
+                const navBorder = nav.querySelector(".nav__border");
+                if (localStorage.getItem(lskey) === "true") {
+                    nav.classList.add(collapseClass);
+                }
+                navBorder.addEventListener("click", ()=> {
+                    nav.classList.toggle(collapseClass);
+                    localStorage.setItem(lskey, nav.classList.contains(CollapseClass));
+                });
+            }
+        </script>
+    </head>
+</html>
